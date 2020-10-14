@@ -5,7 +5,7 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'vagrant-scaleway/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'vagrant-scaleway'
+  spec.name          = 'vagrant-scaleway-custom'
   spec.version       = VagrantPlugins::Scaleway::VERSION
   spec.authors       = ['Satoshi Matsumoto']
   spec.email         = ['kaorimatz@gmail.com']
@@ -22,5 +22,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rubocop'
 
-  spec.add_dependency 'fog-scaleway', '~> 0.5'
+  spec.add_dependency 'fog-scaleway-custom', '~> 0.5.0'
 end

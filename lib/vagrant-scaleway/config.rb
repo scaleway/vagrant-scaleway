@@ -34,6 +34,11 @@ module VagrantPlugins
       # @return [String]
       attr_accessor :region
 
+      # API endpoint
+      #
+      # @return [String]
+      attr_accessor :endpoint
+
       # The security group ID to associate with the server. If nil,
       # organization's default security group will be used.
       #
@@ -82,6 +87,7 @@ module VagrantPlugins
       def initialize
         @bootscript            = UNSET_VALUE
         @commercial_type       = UNSET_VALUE
+        @endpoint              = UNSET_VALUE
         @image                 = UNSET_VALUE
         @name                  = UNSET_VALUE
         @organization          = UNSET_VALUE
@@ -98,6 +104,7 @@ module VagrantPlugins
       def finalize!
         @bootscript      = nil if @bootscript == UNSET_VALUE
         @commercial_type = 'C2S' if @commercial_type == UNSET_VALUE
+        @endpoint        = nil if @endpoint == UNSET_VALUE
         @image           = '75c28f52-6c64-40fc-bb31-f53ca9d02de9' if @image == UNSET_VALUE
 
         if @name == UNSET_VALUE

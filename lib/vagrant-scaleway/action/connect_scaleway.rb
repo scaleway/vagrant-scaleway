@@ -21,7 +21,8 @@ module VagrantPlugins
             provider:              :scaleway,
             scaleway_organization: provider_config.organization,
             scaleway_token:        provider_config.token,
-            scaleway_region:       provider_config.region
+            scaleway_region:       provider_config.region,
+            scaleway_endpoint:     provider_config.endpoint
           }
 
           @logger.info('Connecting to Scaleway...')
